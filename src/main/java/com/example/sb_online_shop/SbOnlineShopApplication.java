@@ -77,15 +77,15 @@ public class SbOnlineShopApplication implements CommandLineRunner {
 		System.out.println("----- All Orders ------");
 
     for (Order o : orderRepository.findAll()) {
-      System.out.println("Customer: " + o.getCustomer().getFullname() + ", Order: " + o.getId() + ", Prix_Total: " + o.getTotal() + "$");
+      System.out.println("Customer " + o.getCustomer().getFullname() + ": Order " + o.getId() + ":  " + o.getTotal() + "$" );
 
       for (Item item : o.getItems()) {
-        System.out.println("\tItem: " + item.getProduct().getName() + ", Quantity: " + item.getQuantity() + ", Price: " + item.getPrice());
+        System.out.println("\tItem: " + item.getProduct().getName() + ", Quantity: " + item.getQuantity() + ", Price: " + item.getPrice() + "$");
       }
 
       System.out.println("-----             ------");
     }
-		System.out.println("-----             ------");
+		// System.out.println("-----             ------");
 
 	}
 
